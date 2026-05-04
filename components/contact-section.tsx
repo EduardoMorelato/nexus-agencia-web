@@ -63,7 +63,7 @@ export function ContactSection() {
 
   return (
     <section id="contato" className="py-20 bg-background">
-      <div className="w-full px-4 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center mb-16">
           <p className="mt-10 text-primary font-medium tracking-widest uppercase text-[16px] mb-2">
             Contato
@@ -77,7 +77,7 @@ export function ContactSection() {
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-12 items-center max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Contact Info */}
           <ScrollReveal delay={0.2} className="space-y-8">
             <div>
@@ -137,7 +137,7 @@ export function ContactSection() {
           </ScrollReveal>
 
           {/* Contact Form */}
-          <ScrollReveal delay={0.4} className="bg-background border border-border rounded-2xl p-8 relative overflow-hidden">
+          <ScrollReveal delay={0.4} className="bg-background border border-border rounded-2xl p-4 sm:p-8 relative overflow-hidden">
             <AnimatePresence mode="wait">
               {isSubmitted ? (
                 <motion.div 
