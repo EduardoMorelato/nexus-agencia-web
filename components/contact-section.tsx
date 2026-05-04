@@ -22,6 +22,9 @@ export function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [service, setService] = useState("")
 
+  // COLE SEU URL DO GOOGLE APPS SCRIPT AQUI
+  const GOOGLE_SHEET_URL = ""
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -35,13 +38,27 @@ export function ContactSection() {
       message: formData.get("message"),
     }
     
-    console.log("Form data:", data)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    try {
+      if (!GOOGLE_SHEET_URL) {
+        // Se não houver URL, apenas simula para não dar erro enquanto o usuário não configura
+        await new Promise(resolve => setTimeout(resolve, 1500))
+      } else {
+        await fetch(GOOGLE_SHEET_URL, {
+          method: "POST",
+          mode: "no-cors", // Necessário para Google Apps Script
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+      }
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error("Erro ao enviar:", error)
+      alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
