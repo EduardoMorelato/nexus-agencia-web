@@ -1,16 +1,33 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 import { ScrambleButton } from "./scramble-button"
 import { ParticleTunnel } from "./particle-tunnel"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion"
+import { ArrowRight, ChevronDown } from "lucide-react"
 
 export function HeroSection() {
   const { scrollY } = useScroll()
+  const [isHovered, setIsHovered] = useState(false)
   
+  // Custom Cursor Logic
+  const cursorX = useMotionValue(-100)
+  const cursorY = useMotionValue(-100)
+  const springConfig = { damping: 25, stiffness: 400 }
+  const cursorXSpring = useSpring(cursorX, springConfig)
+  const cursorYSpring = useSpring(cursorY, springConfig)
+
+  useEffect(() => {
+    const moveCursor = (e: MouseEvent) => {
+      cursorX.set(e.clientX)
+      cursorY.set(e.clientY)
+    }
+    window.addEventListener("mousemove", moveCursor)
+    return () => window.removeEventListener("mousemove", moveCursor)
+  }, [cursorX, cursorY])
+
   // Parallax speeds
   const y1 = useTransform(scrollY, [0, 1000], [0, -400])
   const y2 = useTransform(scrollY, [0, 1000], [0, -150])
@@ -18,8 +35,33 @@ export function HeroSection() {
   const y4 = useTransform(scrollY, [0, 1000], [0, -250])
 
   return (
-    <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
+    <section 
+      className="relative min-h-screen flex items-center bg-background overflow-hidden lg:cursor-none group/hero"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <ParticleTunnel />
+
+      {/* Custom Hero Cursor */}
+      <motion.div
+        className="fixed top-0 left-0 w-14 h-14 bg-primary/10 rounded-full border border-primary/30 pointer-events-none z-[100] hidden lg:flex items-center justify-center backdrop-blur-[2px]"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+          translateX: "-50%",
+          translateY: "-50%",
+          opacity: isHovered ? 1 : 0,
+          scale: isHovered ? 1 : 0.5,
+        }}
+        transition={{ opacity: { duration: 0.2 }, scale: { duration: 0.2 } }}
+      >
+        <motion.div
+          animate={{ y: [0, 5, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-6 h-6 text-primary" />
+        </motion.div>
+      </motion.div>
 
       <motion.div style={{ y: y1 }} className="absolute z-20 hidden lg:block top-[25%] left-[15vw] animate-float pointer-events-none" >
         <span className="inline-flex items-center gap-2 px-6 py-3 bg-background/60 backdrop-blur-md text-primary rounded-full text-base font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(5deg)" }}>
@@ -91,7 +133,7 @@ export function HeroSection() {
             para impulsionar a sua empresa.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center lg:cursor-auto">
             <ScrambleButton
               label="Nossos Serviços"
               href="#servicos"
