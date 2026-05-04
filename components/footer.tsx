@@ -1,0 +1,73 @@
+import Link from "next/link"
+import { ScrollReveal } from "./scroll-reveal"
+
+export function Footer() {
+  return (
+    <footer className="bg-foreground text-background py-12">
+      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
+            <Link href="/" className="font-semibold text-2xl tracking-tight">
+              NEXUS<span className="text-primary">.</span>
+            </Link>
+            <p className="mt-4 text-background/70 max-w-md text-[16px]">
+              Transformamos ideias em resultados através do marketing digital 
+              e estratégia comercial inteligente.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4 font-sans">Links Rápidos</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#servicos" className="text-background/70 hover:text-background transition-colors">
+                  Serviços
+                </Link>
+              </li>
+              <li>
+                <Link href="#equipe" className="text-background/70 hover:text-background transition-colors">
+                  Equipe
+                </Link>
+              </li>
+              <li>
+                <Link href="#portfolio" className="text-background/70 hover:text-background transition-colors">
+                  Portfólio
+                </Link>
+              </li>
+              <li>
+                <Link href="#contato" className="text-background/70 hover:text-background transition-colors">
+                  Contato
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4 font-sans">Serviços</h4>
+            <ul className="space-y-2">
+              <li className="text-background/70">Sites & Landing Pages</li>
+              <li className="text-background/70">Design Gráfico</li>
+              <li className="text-background/70">Social Media</li>
+              <li className="text-background/70">Tráfego Pago</li>
+              <li className="text-background/70">Estratégia Comercial</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-background/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[16px] text-background/70">
+            © {new Date().getFullYear()} Nexus. Todos os direitos reservados.
+          </p>
+          <div className="flex gap-6">
+            <Link href="#" className="text-sm text-background/70 hover:text-background transition-colors">
+              Política de Privacidade
+            </Link>
+            <Link href="#" className="text-sm text-background/70 hover:text-background transition-colors">
+              Termos de Uso
+            </Link>
+          </div>
+        </div>
+      </ScrollReveal>
+    </footer>
+  )
+}
