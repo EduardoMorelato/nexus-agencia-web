@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ScrollReveal } from "./scroll-reveal"
+import { motion, AnimatePresence } from "framer-motion"
 
 const services = [
   {
@@ -78,9 +79,9 @@ export function ServicesSection() {
   const [openService, setOpenService] = useState<string | null>("sites")
 
   return (
-    <section id="servicos" className="py-20 bg-background">
+    <section id="servicos" className="py-10 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal className="text-center mb-16">
+        <ScrollReveal className="text-center mb-8 lg:mb-16">
           <p className="mt-10 text-primary font-medium tracking-widest uppercase text-[16px] mb-2">
             O que fazemos
           </p>
@@ -122,23 +123,33 @@ export function ServicesSection() {
                     )} />
                   </button>
                   
-                  {openService === service.id && (
-                    <div className="px-4 pb-4">
-                      <p className="text-muted-foreground text-[16px] mb-4 pl-14">
-                        {service.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 pl-14">
-                        {service.features.map((feature) => (
-                          <span 
-                            key={feature}
-                            className="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <AnimatePresence initial={false}>
+                    {openService === service.id && (
+                      <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-4 pb-4">
+                          <p className="text-muted-foreground text-[16px] mb-4 pl-14">
+                            {service.description}
+                          </p>
+                          <div className="flex flex-wrap gap-2 pl-14">
+                            {service.features.map((feature) => (
+                              <span 
+                                key={feature}
+                                className="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </ScrollReveal>
             ))}

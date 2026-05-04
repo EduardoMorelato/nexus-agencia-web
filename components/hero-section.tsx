@@ -99,7 +99,7 @@ export function HeroSection() {
         </span>
       </motion.div>
 
-      <motion.div style={{ y: y2 }} className="absolute z-20 lg:hidden top-[26%] right-[2vw] animate-float animation-delay-1000 pointer-events-none">
+      <motion.div style={{ y: y2 }} className="absolute z-20 lg:hidden top-[15%] right-[2vw] animate-float animation-delay-1000 pointer-events-none">
         <span className="inline-flex items-center gap-2 px-4 py-2 bg-background/60 backdrop-blur-md text-primary rounded-full text-xs font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(-2deg)" }}>
           Estratégia
         </span>
@@ -133,7 +133,7 @@ export function HeroSection() {
             para impulsionar a sua empresa.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center lg:cursor-auto">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center lg:cursor-auto">
             <ScrambleButton
               label="Nossos Serviços"
               href="#servicos"
