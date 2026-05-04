@@ -17,8 +17,34 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: 'Nexus | Marketing Digital & Estratégia Comercial',
-  description: 'Transformamos ideias em resultados. Sites, design, social media, tráfego pago, produção de vídeo e estratégia comercial.',
-  generator: 'v0.app',
+  description: 'Transformamos ideias em resultados. Agência premium de design, desenvolvimento web, tráfego pago e estratégia comercial focada em conversão.',
+  keywords: ['agência digital', 'marketing digital', 'criação de sites', 'tráfego pago', 'design', 'social media', 'estratégia comercial', 'nexus', 'Nexus Agency'],
+  authors: [{ name: 'Nexus Agency' }],
+  creator: 'Nexus Agency',
+  publisher: 'Nexus Agency',
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://nexusagency.com.br', // Substitua pelo domínio real depois
+    title: 'Nexus | Elevando sua Marca ao Próximo Nível',
+    description: 'Agência digital premium focada em resultados reais. Design, Desenvolvimento e Tráfego Pago.',
+    siteName: 'Nexus Agency',
+    images: [
+      {
+        url: '/images/og-image.jpg', // Você precisará adicionar essa imagem no public/images
+        width: 1200,
+        height: 630,
+        alt: 'Nexus Agency - Marketing e Estratégia',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nexus | Agência Digital Premium',
+    description: 'Transformamos ideias em resultados reais para o seu negócio.',
+    images: ['/images/og-image.jpg'], // Mesma imagem do OG
+  },
+  generator: 'Next.js',
   icons: {
     icon: [
       {

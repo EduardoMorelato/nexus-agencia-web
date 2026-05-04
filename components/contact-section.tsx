@@ -113,88 +113,116 @@ export function ContactSection() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-foreground">
-                      Nome
-                    </label>
+              <form onSubmit={handleSubmit} className="space-y-8 mt-4">
+                <div className="grid sm:grid-cols-2 gap-8 sm:gap-6">
+                  <div className="relative group">
                     <Input 
                       id="name"
                       name="name"
-                      placeholder="Seu nome"
+                      placeholder=" "
                       required
-                      className="border-foreground/20 focus:border-primary focus:ring-[3px] focus:ring-primary/5 outline-none focus-visible:ring-0 transition-all duration-300 rounded-full px-6"
+                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                     />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-foreground">
-                      E-mail
+                    <label 
+                      htmlFor="name" 
+                      className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                      peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                      peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                    >
+                      Nome Completo
                     </label>
+                  </div>
+                  <div className="relative group">
                     <Input 
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="seu@email.com"
+                      placeholder=" "
                       required
-                      className="border-foreground/20 focus:border-primary focus:ring-[3px] focus:ring-primary/5 outline-none focus-visible:ring-0 transition-all duration-300 rounded-full px-6"
+                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                     />
+                    <label 
+                      htmlFor="email" 
+                      className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                      peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                      peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                    >
+                      E-mail Profissional
+                    </label>
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-medium text-foreground">
-                    Telefone
-                  </label>
+                <div className="relative group">
                   <Input 
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="Insira seu telefone"
-                    className="border-foreground/20 focus:border-primary focus:ring-[3px] focus:ring-primary/5 outline-none focus-visible:ring-0 transition-all duration-300 rounded-full px-6"
+                    placeholder=" "
+                    className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                   />
+                  <label 
+                    htmlFor="phone" 
+                    className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                    peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                    peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                  >
+                    Telefone / WhatsApp
+                  </label>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="service" className="text-sm font-medium text-foreground">
-                    Serviço de Interesse
-                  </label>
+                <div className="relative group">
                   <select
                     id="service"
                     name="service"
-                    className="flex h-10 w-full rounded-full border border-foreground/20 bg-background px-6 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:border-primary focus:ring-[3px] focus:ring-primary/5 outline-none focus-visible:ring-0 transition-all duration-300 appearance-none"
+                    defaultValue=""
+                    className="peer h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 py-2 text-sm focus:border-primary focus:ring-0 outline-none transition-all duration-300 appearance-none text-foreground"
                   >
-                    <option value="">Selecione um serviço</option>
-                    <option value="sites">Sites & Landing Pages</option>
-                    <option value="design">Design Gráfico</option>
-                    <option value="social">Social Media</option>
-                    <option value="video">Produção de Vídeo</option>
-                    <option value="trafego">Tráfego Pago</option>
-                    <option value="estrategia">Estratégia Comercial</option>
-                    <option value="ia">Soluções com IA</option>
-                    <option value="outro">Outro</option>
+                    <option value="" disabled hidden></option>
+                    <option value="sites" className="bg-background">Sites & Landing Pages</option>
+                    <option value="design" className="bg-background">Design Gráfico</option>
+                    <option value="social" className="bg-background">Social Media</option>
+                    <option value="video" className="bg-background">Produção de Vídeo</option>
+                    <option value="trafego" className="bg-background">Tráfego Pago</option>
+                    <option value="estrategia" className="bg-background">Estratégia Comercial</option>
+                    <option value="ia" className="bg-background">Soluções com IA</option>
+                    <option value="outro" className="bg-background">Outro</option>
                   </select>
+                  <label 
+                    htmlFor="service" 
+                    className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                    peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                    peer-[:not([value=""])]:-translate-y-7 peer-[:not([value=""])]:text-xs peer-[:not([value=""])]:bg-background peer-[:not([value=""])]:px-2"
+                  >
+                    Serviço de Interesse
+                  </label>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-foreground">
-                    Mensagem
-                  </label>
+                <div className="relative group">
                   <Textarea 
                     id="message"
                     name="message"
-                    placeholder="Conte-nos sobre seu projeto..."
+                    placeholder=" "
                     rows={4}
                     required
-                    className="border-foreground/20 focus:border-primary focus:ring-[3px] focus:ring-primary/5 outline-none focus-visible:ring-0 transition-all duration-300 rounded-[28px] px-6 py-4"
+                    className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent"
                   />
+                  <label 
+                    htmlFor="message" 
+                    className="absolute left-5 top-5 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                    peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                    peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                  >
+                    Conte-nos sobre o seu projeto...
+                  </label>
                 </div>
 
-                <ScrambleButton 
-                  type="submit" 
-                  label={isSubmitting ? "Enviando..." : "Enviar Mensagem"}
-                  className="w-full"
-                />
+                <div className="pt-2">
+                  <ScrambleButton 
+                    type="submit" 
+                    label={isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+                    className="w-full h-14 text-base"
+                  />
+                </div>
               </form>
             )}
           </ScrollReveal>
