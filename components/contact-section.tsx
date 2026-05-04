@@ -142,7 +142,7 @@ export function ContactSection() {
                       />
                       <label 
                         htmlFor="name" 
-                        className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                        className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                         peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                         peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                       >
@@ -160,7 +160,7 @@ export function ContactSection() {
                       />
                       <label 
                         htmlFor="email" 
-                        className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                        className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                         peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                         peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                       >
@@ -179,7 +179,7 @@ export function ContactSection() {
                     />
                     <label 
                       htmlFor="phone" 
-                      className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                      className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                       peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                       peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                     >
@@ -207,7 +207,7 @@ export function ContactSection() {
                     </select>
                     <label 
                       htmlFor="service" 
-                      className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                      className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                       peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                       peer-valid:-translate-y-7 peer-valid:text-xs peer-valid:bg-background peer-valid:px-2"
                     >
@@ -226,7 +226,7 @@ export function ContactSection() {
                     />
                     <label 
                       htmlFor="message" 
-                      className="absolute left-5 top-5 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                      className="absolute left-5 top-[21px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                       peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                       peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                     >
