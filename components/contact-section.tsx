@@ -231,7 +231,7 @@ export function ContactSection() {
                     <Select onValueChange={setService} required>
                       <SelectTrigger 
                         className={cn(
-                          "h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 text-sm transition-all duration-300 outline-none focus:border-primary focus:ring-0 focus-visible:ring-0 ring-0",
+                          "!h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 text-sm transition-all duration-300 outline-none focus:border-primary focus:ring-0 focus-visible:ring-0 ring-0",
                           service && "border-primary"
                         )}
                       >
