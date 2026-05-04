@@ -77,7 +77,7 @@ export function ContactSection() {
           </p>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Contact Info */}
           <ScrollReveal delay={0.2} className="space-y-8">
             <div>
@@ -235,7 +235,7 @@ export function ContactSection() {
                           service && "border-primary"
                         )}
                       >
-                        <SelectValue placeholder=" " />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="bg-background border-border rounded-xl">
                         <SelectItem value="sites">Sites & Landing Pages</SelectItem>
@@ -249,10 +249,9 @@ export function ContactSection() {
                       </SelectContent>
                     </Select>
                     <label 
-                      htmlFor="service" 
                       className={cn(
-                        "absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none bg-background px-2",
-                        service ? "-translate-y-7 text-xs text-primary" : "group-focus-within:-translate-y-7 group-focus-within:text-xs group-focus-within:text-primary"
+                        "absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none px-2",
+                        service ? "-translate-y-7 text-xs text-primary bg-background" : "group-focus-within:-translate-y-7 group-focus-within:text-xs group-focus-within:text-primary group-focus-within:bg-background"
                       )}
                     >
                       Serviço de Interesse <span className="text-red-500">*</span>
