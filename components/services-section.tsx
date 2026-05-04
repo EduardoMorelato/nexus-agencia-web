@@ -150,6 +150,9 @@ export function ServicesSection() {
               src={services.find(s => s.id === openService)?.image || "/images/service-design.jpg"}
               alt="Serviço em destaque"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={80}
+              priority
               className="object-cover transition-opacity duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
