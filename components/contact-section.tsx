@@ -77,7 +77,7 @@ export function ContactSection() {
           </p>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 gap-12 items-center max-w-5xl mx-auto">
           {/* Contact Info */}
           <ScrollReveal delay={0.2} className="space-y-8">
             <div>
