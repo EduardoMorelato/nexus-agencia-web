@@ -131,6 +131,9 @@ export function ContactSection() {
                   onSubmit={handleSubmit} 
                   className="space-y-8 mt-4"
                 >
+                  <h3 className="text-xl tracking-[1px] font-semibold text-foreground mb-2 lg:hidden">
+                    Fale conosco
+                  </h3>
                   <div className="grid sm:grid-cols-2 gap-8 sm:gap-6">
                     <div className="relative group">
                       <Input 
