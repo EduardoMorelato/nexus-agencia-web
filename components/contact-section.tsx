@@ -8,14 +8,34 @@ import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Loader2 } from "lucide-
 import { ScrambleButton } from "./scramble-button"
 import { ScrollReveal } from "./scroll-reveal"
 import { motion, AnimatePresence } from "framer-motion"
+import { cn } from "@/lib/utils"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [service, setService] = useState("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      service: service,
+      message: formData.get("message"),
+    }
+    
+    console.log("Form data:", data)
     
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500))
@@ -191,28 +211,32 @@ export function ContactSection() {
                   </div>
 
                   <div className="relative group">
-                    <select
-                      id="service"
-                      name="service"
-                      defaultValue=""
-                      required
-                      className="peer h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 py-2 text-sm focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 appearance-none text-foreground"
-                    >
-                      <option value="" disabled hidden></option>
-                      <option value="sites" className="bg-background">Sites & Landing Pages</option>
-                      <option value="design" className="bg-background">Design Gráfico</option>
-                      <option value="social" className="bg-background">Social Media</option>
-                      <option value="video" className="bg-background">Produção de Vídeo</option>
-                      <option value="trafego" className="bg-background">Tráfego Pago</option>
-                      <option value="estrategia" className="bg-background">Estratégia Comercial</option>
-                      <option value="ia" className="bg-background">Soluções com IA</option>
-                      <option value="outro" className="bg-background">Outro</option>
-                    </select>
+                    <Select onValueChange={setService} required>
+                      <SelectTrigger 
+                        className={cn(
+                          "h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 text-sm transition-all duration-300 outline-none focus:border-primary focus:ring-0 focus-visible:ring-0 ring-0",
+                          service && "border-primary"
+                        )}
+                      >
+                        <SelectValue placeholder=" " />
+                      </SelectTrigger>
+                      <SelectContent className="bg-background border-border rounded-xl">
+                        <SelectItem value="sites">Sites & Landing Pages</SelectItem>
+                        <SelectItem value="design">Design Gráfico</SelectItem>
+                        <SelectItem value="social">Social Media</SelectItem>
+                        <SelectItem value="video">Produção de Vídeo</SelectItem>
+                        <SelectItem value="trafego">Tráfego Pago</SelectItem>
+                        <SelectItem value="estrategia">Estratégia Comercial</SelectItem>
+                        <SelectItem value="ia">Soluções com IA</SelectItem>
+                        <SelectItem value="outro">Outro</SelectItem>
+                      </SelectContent>
+                    </Select>
                     <label 
                       htmlFor="service" 
-                      className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                      peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                      peer-valid:-translate-y-7 peer-valid:text-xs peer-valid:bg-background peer-valid:px-2"
+                      className={cn(
+                        "absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none bg-background px-2",
+                        service ? "-translate-y-7 text-xs text-primary" : "group-focus-within:-translate-y-7 group-focus-within:text-xs group-focus-within:text-primary"
+                      )}
                     >
                       Serviço de Interesse <span className="text-red-500">*</span>
                     </label>
