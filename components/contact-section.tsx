@@ -31,7 +31,7 @@ export function ContactSection() {
   }
 
   // COLE SEU URL DO GOOGLE APPS SCRIPT AQUI
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxzvvw9XgBUdzsppIKrf1QqeRwwY4nYRSqAHryILNdsj58zV5uwL-XmyzRAY0CrtWcHKQ/exec"
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyJGLpKmpRkR0TvVK2YN2IdM_Oo1-Ls7ThlqYxHcya2yJuOOLdSPn0k9mnNM2rlzR-ypQ/exec"
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
