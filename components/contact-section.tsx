@@ -4,9 +4,10 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Loader2 } from "lucide-react"
 import { ScrambleButton } from "./scramble-button"
 import { ScrollReveal } from "./scroll-reveal"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -17,7 +18,7 @@ export function ContactSection() {
     setIsSubmitting(true)
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1500))
     
     setIsSubmitting(false)
     setIsSubmitted(true)
@@ -99,133 +100,154 @@ export function ContactSection() {
           </ScrollReveal>
 
           {/* Contact Form */}
-          <ScrollReveal delay={0.4} className="bg-background border border-border rounded-2xl p-8">
-            {isSubmitted ? (
-              <div className="text-center py-12">
-                <div className="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Send className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  Mensagem Enviada!
-                </h3>
-                <p className="text-muted-foreground text-[16px]">
-                  Obrigado pelo contato. Retornaremos em breve.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-8 mt-4">
-                <div className="grid sm:grid-cols-2 gap-8 sm:gap-6">
+          <ScrollReveal delay={0.4} className="bg-background border border-border rounded-2xl p-8 relative overflow-hidden">
+            <AnimatePresence mode="wait">
+              {isSubmitted ? (
+                <motion.div 
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-center py-20 flex flex-col items-center justify-center h-full min-h-[400px]"
+                >
+                  <div className="h-20 w-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 relative">
+                    <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping" style={{ animationDuration: "3s" }} />
+                    <Send className="h-10 w-10 text-primary relative z-10" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3 tracking-wide">
+                    Mensagem Enviada!
+                  </h3>
+                  <p className="text-muted-foreground text-[16px] max-w-sm text-balance">
+                    Nossa equipe recebeu suas informações e entrará em contato muito em breve.
+                  </p>
+                </motion.div>
+              ) : (
+                <motion.form 
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
+                  transition={{ duration: 0.4 }}
+                  onSubmit={handleSubmit} 
+                  className="space-y-8 mt-4"
+                >
+                  <div className="grid sm:grid-cols-2 gap-8 sm:gap-6">
+                    <div className="relative group">
+                      <Input 
+                        id="name"
+                        name="name"
+                        placeholder=" "
+                        required
+                        className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                      />
+                      <label 
+                        htmlFor="name" 
+                        className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                      >
+                        Nome Completo
+                      </label>
+                    </div>
+                    <div className="relative group">
+                      <Input 
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder=" "
+                        required
+                        className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                      />
+                      <label 
+                        htmlFor="email" 
+                        className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                      >
+                        E-mail Profissional
+                      </label>
+                    </div>
+                  </div>
+
                   <div className="relative group">
                     <Input 
-                      id="name"
-                      name="name"
+                      id="phone"
+                      name="phone"
+                      type="tel"
                       placeholder=" "
-                      required
                       className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                     />
                     <label 
-                      htmlFor="name" 
+                      htmlFor="phone" 
                       className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                       peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                       peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                     >
-                      Nome Completo
+                      Telefone / WhatsApp
                     </label>
                   </div>
+
                   <div className="relative group">
-                    <Input 
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder=" "
+                    <select
+                      id="service"
+                      name="service"
+                      defaultValue=""
                       required
-                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
-                    />
+                      className="peer h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 py-2 text-sm focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 appearance-none text-foreground"
+                    >
+                      <option value="" disabled hidden></option>
+                      <option value="sites" className="bg-background">Sites & Landing Pages</option>
+                      <option value="design" className="bg-background">Design Gráfico</option>
+                      <option value="social" className="bg-background">Social Media</option>
+                      <option value="video" className="bg-background">Produção de Vídeo</option>
+                      <option value="trafego" className="bg-background">Tráfego Pago</option>
+                      <option value="estrategia" className="bg-background">Estratégia Comercial</option>
+                      <option value="ia" className="bg-background">Soluções com IA</option>
+                      <option value="outro" className="bg-background">Outro</option>
+                    </select>
                     <label 
-                      htmlFor="email" 
+                      htmlFor="service" 
                       className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                       peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                      peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                      peer-valid:-translate-y-7 peer-valid:text-xs peer-valid:bg-background peer-valid:px-2"
                     >
-                      E-mail Profissional
+                      Serviço de Interesse
                     </label>
                   </div>
-                </div>
 
-                <div className="relative group">
-                  <Input 
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder=" "
-                    className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
-                  />
-                  <label 
-                    htmlFor="phone" 
-                    className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                    peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                    peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
-                  >
-                    Telefone / WhatsApp
-                  </label>
-                </div>
+                  <div className="relative group">
+                    <Textarea 
+                      id="message"
+                      name="message"
+                      placeholder=" "
+                      rows={4}
+                      required
+                      className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent"
+                    />
+                    <label 
+                      htmlFor="message" 
+                      className="absolute left-5 top-5 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                      peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                      peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                    >
+                      Conte-nos sobre o seu projeto...
+                    </label>
+                  </div>
 
-                <div className="relative group">
-                  <select
-                    id="service"
-                    name="service"
-                    defaultValue=""
-                    required
-                    className="peer h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 py-2 text-sm focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 appearance-none text-foreground"
-                  >
-                    <option value="" disabled hidden></option>
-                    <option value="sites" className="bg-background">Sites & Landing Pages</option>
-                    <option value="design" className="bg-background">Design Gráfico</option>
-                    <option value="social" className="bg-background">Social Media</option>
-                    <option value="video" className="bg-background">Produção de Vídeo</option>
-                    <option value="trafego" className="bg-background">Tráfego Pago</option>
-                    <option value="estrategia" className="bg-background">Estratégia Comercial</option>
-                    <option value="ia" className="bg-background">Soluções com IA</option>
-                    <option value="outro" className="bg-background">Outro</option>
-                  </select>
-                  <label 
-                    htmlFor="service" 
-                    className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                    peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                    peer-valid:-translate-y-7 peer-valid:text-xs peer-valid:bg-background peer-valid:px-2"
-                  >
-                    Serviço de Interesse
-                  </label>
-                </div>
-
-                <div className="relative group">
-                  <Textarea 
-                    id="message"
-                    name="message"
-                    placeholder=" "
-                    rows={4}
-                    required
-                    className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent"
-                  />
-                  <label 
-                    htmlFor="message" 
-                    className="absolute left-5 top-5 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                    peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                    peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
-                  >
-                    Conte-nos sobre o seu projeto...
-                  </label>
-                </div>
-
-                <div className="pt-2">
-                  <ScrambleButton 
-                    type="submit" 
-                    label={isSubmitting ? "Enviando..." : "Enviar Mensagem"}
-                    className="w-full h-14 text-base"
-                  />
-                </div>
-              </form>
-            )}
+                  <div className="pt-2">
+                    <div className={isSubmitting ? "opacity-80 pointer-events-none transition-opacity" : ""}>
+                      <ScrambleButton 
+                        type="submit" 
+                        label={isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+                        className="w-full h-14 text-base"
+                      >
+                        {isSubmitting && <Loader2 className="h-4 w-4 animate-spin ml-2" />}
+                      </ScrambleButton>
+                    </div>
+                  </div>
+                </motion.form>
+              )}
+            </AnimatePresence>
           </ScrollReveal>
         </div>
       </div>
