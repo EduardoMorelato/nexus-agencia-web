@@ -63,7 +63,7 @@ export function ContactSection() {
 
   return (
     <section id="contato" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12">
         <ScrollReveal className="text-center mb-16">
           <p className="mt-10 text-primary font-medium tracking-widest uppercase text-[16px] mb-2">
             Contato

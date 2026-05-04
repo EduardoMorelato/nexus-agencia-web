@@ -46,7 +46,7 @@ export function TeamSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {team.map((member, index) => (
-            <ScrollReveal key={member.name} delay={0.2 + (0.2 * index)} className="bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow">
+            <ScrollReveal key={member.name} delay={0.2 + (0.2 * index)} className="bg-transparent border border-border/60 shadow-sm hover:shadow-md rounded-2xl p-8 transition-shadow">
               <div className="flex items-center gap-4 mb-4">
                 <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-2xl font-bold text-primary">
