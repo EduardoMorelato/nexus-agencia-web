@@ -191,7 +191,7 @@ export function ContactSection() {
                     htmlFor="service" 
                     className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                     peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                    peer-[:not([value=""])]:-translate-y-7 peer-[:not([value=""])]:text-xs peer-[:not([value=""])]:bg-background peer-[:not([value=""])]:px-2"
+                    peer-[:not([value=''])]:-translate-y-7 peer-[:not([value=''])]:text-xs peer-[:not([value=''])]:bg-background peer-[:not([value=''])]:px-2"
                   >
                     Serviço de Interesse
                   </label>
