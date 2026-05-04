@@ -121,7 +121,7 @@ export function ContactSection() {
                       name="name"
                       placeholder=" "
                       required
-                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                     />
                     <label 
                       htmlFor="name" 
@@ -139,7 +139,7 @@ export function ContactSection() {
                       type="email"
                       placeholder=" "
                       required
-                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                     />
                     <label 
                       htmlFor="email" 
@@ -158,7 +158,7 @@ export function ContactSection() {
                     name="phone"
                     type="tel"
                     placeholder=" "
-                    className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                    className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                   />
                   <label 
                     htmlFor="phone" 
@@ -175,7 +175,8 @@ export function ContactSection() {
                     id="service"
                     name="service"
                     defaultValue=""
-                    className="peer h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 py-2 text-sm focus:border-primary focus:ring-0 outline-none transition-all duration-300 appearance-none text-foreground"
+                    required
+                    className="peer h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 py-2 text-sm focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 appearance-none text-foreground"
                   >
                     <option value="" disabled hidden></option>
                     <option value="sites" className="bg-background">Sites & Landing Pages</option>
@@ -191,7 +192,7 @@ export function ContactSection() {
                     htmlFor="service" 
                     className="absolute left-5 top-4 text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
                     peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                    peer-[:not([value=''])]:-translate-y-7 peer-[:not([value=''])]:text-xs peer-[:not([value=''])]:bg-background peer-[:not([value=''])]:px-2"
+                    peer-valid:-translate-y-7 peer-valid:text-xs peer-valid:bg-background peer-valid:px-2"
                   >
                     Serviço de Interesse
                   </label>
@@ -204,7 +205,7 @@ export function ContactSection() {
                     placeholder=" "
                     rows={4}
                     required
-                    className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent"
+                    className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent"
                   />
                   <label 
                     htmlFor="message" 
