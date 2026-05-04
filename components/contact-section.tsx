@@ -21,6 +21,14 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [service, setService] = useState("")
+  const [phone, setPhone] = useState("")
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 11)
+    if (digits.length <= 2) return digits
+    if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`
+  }
 
   // COLE SEU URL DO GOOGLE APPS SCRIPT AQUI
   const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxzvvw9XgBUdzsppIKrf1QqeRwwY4nYRSqAHryILNdsj58zV5uwL-XmyzRAY0CrtWcHKQ/exec"
@@ -215,6 +223,9 @@ export function ContactSection() {
                       name="phone"
                       type="tel"
                       placeholder=" "
+                      value={phone}
+                      onChange={(e) => setPhone(formatPhone(e.target.value))}
+                      maxLength={15}
                       className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
                     />
                     <label 
