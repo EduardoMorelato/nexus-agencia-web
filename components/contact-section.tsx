@@ -23,7 +23,7 @@ export function ContactSection() {
   const [service, setService] = useState("")
 
   // COLE SEU URL DO GOOGLE APPS SCRIPT AQUI
-  const GOOGLE_SHEET_URL = ""
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxzvvw9XgBUdzsppIKrf1QqeRwwY4nYRSqAHryILNdsj58zV5uwL-XmyzRAY0CrtWcHKQ/exec"
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
