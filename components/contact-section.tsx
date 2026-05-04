@@ -146,7 +146,7 @@ export function ContactSection() {
                         peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                         peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                       >
-                        Nome Completo
+                        Nome Completo <span className="text-red-500">*</span>
                       </label>
                     </div>
                     <div className="relative group">
@@ -164,7 +164,7 @@ export function ContactSection() {
                         peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                         peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                       >
-                        E-mail Profissional
+                        E-mail Profissional <span className="text-red-500">*</span>
                       </label>
                     </div>
                   </div>
@@ -211,7 +211,7 @@ export function ContactSection() {
                       peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                       peer-valid:-translate-y-7 peer-valid:text-xs peer-valid:bg-background peer-valid:px-2"
                     >
-                      Serviço de Interesse
+                      Serviço de Interesse <span className="text-red-500">*</span>
                     </label>
                   </div>
 
@@ -230,7 +230,7 @@ export function ContactSection() {
                       peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
                       peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
                     >
-                      Conte-nos sobre o seu projeto...
+                      Conte-nos sobre o seu projeto... <span className="text-red-500">*</span>
                     </label>
                   </div>
 
