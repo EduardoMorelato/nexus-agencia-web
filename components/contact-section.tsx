@@ -72,22 +72,22 @@ export function ContactSection() {
   return (
     <section id="contato" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal className="text-center mb-16">
-          <p className="mt-10 text-primary font-medium tracking-widest uppercase text-[16px] mb-2">
+        <ScrollReveal className="text-center mb-10">
+          <p className="mt-10 text-primary font-medium tracking-widest uppercase text-[14px] mb-2">
             Contato
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-[2px] text-balance">
             Pronto para começar?
           </h2>
-          <p className="mt-4 pb-6 text-muted-foreground max-w-2xl mx-auto text-[16px]">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-[16px]">
             Entre em contato e vamos conversar sobre como podemos transformar 
             seu negócio através do marketing digital e estratégia comercial.
           </p>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
-          <ScrollReveal delay={0.2} className="space-y-8">
+          <ScrollReveal delay={0.2} className="space-y-8 lg:pt-8">
             <div>
               <h3 className="text-xl tracking-[1px] font-semibold text-foreground mb-6">
                 Fale conosco
@@ -145,7 +145,7 @@ export function ContactSection() {
           </ScrollReveal>
 
           {/* Contact Form */}
-          <ScrollReveal delay={0.4} className="bg-background border border-border rounded-2xl p-4 sm:p-8 relative overflow-hidden">
+          <ScrollReveal delay={0.4} className="bg-background border border-border rounded-2xl p-4 sm:p-8 relative overflow-hidden min-h-[580px] lg:min-h-[620px]">
             <AnimatePresence mode="wait">
               {isSubmitted ? (
                 <motion.div 
@@ -174,12 +174,12 @@ export function ContactSection() {
                   exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
                   transition={{ duration: 0.4 }}
                   onSubmit={handleSubmit} 
-                  className="space-y-8 mt-4"
+                  className="flex flex-col gap-1 mt-4"
                 >
                   <h3 className="text-xl tracking-[1px] font-semibold text-foreground mb-2 lg:hidden">
                     Fale conosco
                   </h3>
-                  <div className="grid sm:grid-cols-2 gap-8 sm:gap-6">
+                  <div className="grid sm:grid-cols-2 gap-1">
                     <div className="relative group">
                       <Input 
                         id="name"
@@ -217,75 +217,84 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="relative group">
-                    <Input 
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder=" "
-                      value={phone}
-                      onChange={(e) => setPhone(formatPhone(e.target.value))}
-                      maxLength={15}
-                      className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
-                    />
-                    <label 
-                      htmlFor="phone" 
-                      className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                      peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                      peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
-                    >
-                      Telefone / WhatsApp
-                    </label>
+                  <div className="transition-all duration-500 ease-out pt-1 focus-within:pt-8 [&:has(input:not(:placeholder-shown))]:pt-8">
+                    <div className="relative group">
+                      <Input 
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder=" "
+                        value={phone}
+                        onChange={(e) => setPhone(formatPhone(e.target.value))}
+                        maxLength={15}
+                        className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                      />
+                      <label 
+                        htmlFor="phone" 
+                        className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                      >
+                        Telefone / WhatsApp
+                      </label>
+                    </div>
                   </div>
 
-                  <div className="relative group">
-                    <Select onValueChange={setService} required>
-                      <SelectTrigger 
+                  <div className={cn(
+                    "transition-all duration-500 ease-out pt-1 focus-within:pt-8",
+                    service && "pt-8"
+                  )}>
+                    <div className="relative group">
+                      <Select onValueChange={setService} required>
+                        <SelectTrigger 
+                          className={cn(
+                            "!h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 text-sm transition-all duration-300 outline-none focus:border-primary focus:ring-0 focus-visible:ring-0 ring-0",
+                            service && "border-primary"
+                          )}
+                        >
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent className="bg-background border-border rounded-xl" position="popper" sideOffset={5} data-lenis-prevent>
+                          <SelectItem value="sites">Sites & Landing Pages</SelectItem>
+                          <SelectItem value="trafego">Tráfego Pago</SelectItem>
+                          <SelectItem value="estrategia">Estratégia Comercial</SelectItem>
+                          <SelectItem value="ia">Soluções com IA</SelectItem>
+                          <SelectItem value="outro">Outro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <label 
                         className={cn(
-                          "!h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 text-sm transition-all duration-300 outline-none focus:border-primary focus:ring-0 focus-visible:ring-0 ring-0",
-                          service && "border-primary"
+                          "absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none px-2",
+                          service ? "-translate-y-7 text-xs text-primary bg-background" : "group-focus-within:-translate-y-7 group-focus-within:text-xs group-focus-within:text-primary group-focus-within:bg-background"
                         )}
                       >
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent className="bg-background border-border rounded-xl">
-                        <SelectItem value="sites">Sites & Landing Pages</SelectItem>
-                        <SelectItem value="trafego">Tráfego Pago</SelectItem>
-                        <SelectItem value="estrategia">Estratégia Comercial</SelectItem>
-                        <SelectItem value="ia">Soluções com IA</SelectItem>
-                        <SelectItem value="outro">Outro</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <label 
-                      className={cn(
-                        "absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none px-2",
-                        service ? "-translate-y-7 text-xs text-primary bg-background" : "group-focus-within:-translate-y-7 group-focus-within:text-xs group-focus-within:text-primary group-focus-within:bg-background"
-                      )}
-                    >
-                      Serviço de Interesse <span className="text-red-500">*</span>
-                    </label>
+                        Serviço de Interesse <span className="text-red-500">*</span>
+                      </label>
+                    </div>
                   </div>
 
-                  <div className="relative group">
-                    <Textarea 
-                      id="message"
-                      name="message"
-                      placeholder=" "
-                      rows={4}
-                      required
-                      className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent"
-                    />
-                    <label 
-                      htmlFor="message" 
-                      className="absolute left-5 top-[21px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                      peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                      peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
-                    >
-                      Conte-nos sobre o seu projeto... <span className="text-red-500">*</span>
-                    </label>
+                  <div className="transition-all duration-500 ease-out pt-1 focus-within:pt-8 [&:has(textarea:not(:placeholder-shown))]:pt-8">
+                    <div className="relative group">
+                      <Textarea 
+                        id="message"
+                        name="message"
+                        placeholder=" "
+                        rows={4}
+                        required
+                        className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent min-h-[112px] [field-sizing:unset]"
+                      />
+                      <label 
+                        htmlFor="message" 
+                        className="absolute left-5 top-[21px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
+                        peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                      >
+                        Conte-nos sobre o seu projeto... <span className="text-red-500">*</span>
+                      </label>
+                    </div>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="transition-all duration-500 ease-out pt-2 focus-within:pt-8">
                     <div className={isSubmitting ? "opacity-80 pointer-events-none transition-opacity" : ""}>
                       <ScrambleButton 
                         type="submit" 
