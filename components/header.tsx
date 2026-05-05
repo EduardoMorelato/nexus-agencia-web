@@ -58,9 +58,9 @@ export function Header() {
               href="https://wa.me/5515991116883?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20agendar%20uma%20reunião."
               target="_blank"
               rel="noopener noreferrer"
-              className="scale-[0.8] sm:scale-90 origin-right"
+              className="scale-[0.85] sm:scale-90 origin-right"
             >
-              <WhatsappIcon className="ml-1" />
+              <WhatsappIcon className="ml-2" size={18} />
             </ScrambleButton>
           </div>
         </div>
