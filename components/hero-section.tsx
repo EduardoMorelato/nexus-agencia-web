@@ -61,25 +61,49 @@ export function HeroSection() {
         </motion.div>
       </motion.div>
 
-      <motion.div style={{ y: y1 }} className="absolute z-20 hidden lg:block top-[25%] left-[15vw] animate-float pointer-events-none" >
+      <motion.div 
+        style={{ y: y1 }} 
+        initial={{ opacity: 0, scale: 0, x: "-50%", y: "-50%" }}
+        animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+        transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 hidden lg:block top-[25%] left-[15vw] animate-float pointer-events-none" 
+      >
         <span className="inline-flex items-center gap-2 px-6 py-3 bg-background/60 backdrop-blur-md text-primary rounded-full text-base font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(5deg)" }}>
           Design Criativo
         </span>
       </motion.div>
 
-      <motion.div style={{ y: y2 }} className="absolute z-20 hidden lg:block bottom-[20%] left-[8vw] animate-float animation-delay-1000 pointer-events-none">
+      <motion.div 
+        style={{ y: y2 }} 
+        initial={{ opacity: 0, scale: 0, x: "-50%", y: "50%" }}
+        animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+        transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 hidden lg:block bottom-[20%] left-[8vw] animate-float animation-delay-1000 pointer-events-none"
+      >
         <span className="inline-flex items-center gap-2 px-6 py-3 bg-background/60 backdrop-blur-md text-primary rounded-full text-base font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(-3deg)" }}>
           Estratégia de Vendas
         </span>
       </motion.div>
 
-      <motion.div style={{ y: y3 }} className="absolute z-20 hidden lg:block top-[20%] right-[9vw] animate-float animation-delay-2000 pointer-events-none">
+      <motion.div 
+        style={{ y: y3 }} 
+        initial={{ opacity: 0, scale: 0, x: "50%", y: "-50%" }}
+        animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+        transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 hidden lg:block top-[20%] right-[9vw] animate-float animation-delay-2000 pointer-events-none"
+      >
         <span className="inline-flex items-center gap-2 px-6 py-3 bg-background/60 backdrop-blur-md text-primary rounded-full text-base font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(2deg)" }}>
           Marketing Digital
         </span>
       </motion.div>
 
-      <motion.div style={{ y: y4 }} className="absolute z-20 hidden lg:block bottom-[15%] right-[8vw] animate-float animation-delay-3000 pointer-events-none">
+      <motion.div 
+        style={{ y: y4 }} 
+        initial={{ opacity: 0, scale: 0, x: "50%", y: "50%" }}
+        animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+        transition={{ duration: 1, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 hidden lg:block bottom-[15%] right-[8vw] animate-float animation-delay-3000 pointer-events-none"
+      >
         <span className="inline-flex items-center gap-2 px-6 py-3 bg-background/60 backdrop-blur-md text-primary rounded-full text-base font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(-4deg)" }}>
           Inteligência Artificial
         </span>
@@ -91,25 +115,49 @@ export function HeroSection() {
         Altere as classes top-[xx%], bottom-[xx%], left-[xxvw], right-[xxvw] 
         para posicionar cada uma delas na tela de celulares.
       */}
-      <motion.div style={{ y: y1 }} className="absolute z-20 lg:hidden top-[10%] left-[2vw] animate-float pointer-events-none">
+      <motion.div 
+        style={{ y: y1 }} 
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 lg:hidden top-[10%] left-[2vw] animate-float pointer-events-none"
+      >
         <span className="inline-flex items-center gap-2 px-4 py-2 bg-background/60 backdrop-blur-md text-primary rounded-full text-xs font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(4deg)" }}>
           Design Criativo
         </span>
       </motion.div>
 
-      <motion.div style={{ y: y2 }} className="absolute z-20 lg:hidden top-[15%] right-[2vw] animate-float animation-delay-1000 pointer-events-none">
+      <motion.div 
+        style={{ y: y2 }} 
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 lg:hidden top-[15%] right-[2vw] animate-float animation-delay-1000 pointer-events-none"
+      >
         <span className="inline-flex items-center gap-2 px-4 py-2 bg-background/60 backdrop-blur-md text-primary rounded-full text-xs font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(-2deg)" }}>
           Estratégia
         </span>
       </motion.div>
 
-      <motion.div style={{ y: y3 }} className="absolute z-20 lg:hidden bottom-[18%] left-[2vw] animate-float animation-delay-2000 pointer-events-none">
+      <motion.div 
+        style={{ y: y3 }} 
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 lg:hidden bottom-[18%] left-[2vw] animate-float animation-delay-2000 pointer-events-none"
+      >
         <span className="inline-flex items-center gap-2 px-4 py-2 bg-background/60 backdrop-blur-md text-primary rounded-full text-xs font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(3deg)" }}>
           Marketing
         </span>
       </motion.div>
 
-      <motion.div style={{ y: y4 }} className="absolute z-20 lg:hidden bottom-[12%] right-[2vw] animate-float animation-delay-3000 pointer-events-none">
+      <motion.div 
+        style={{ y: y4 }} 
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 lg:hidden bottom-[12%] right-[2vw] animate-float animation-delay-3000 pointer-events-none"
+      >
         <span className="inline-flex items-center gap-2 px-4 py-2 bg-background/60 backdrop-blur-md text-primary rounded-full text-xs font-light border border-primary/10 shadow-sm whitespace-nowrap" style={{ transform: "rotate(-5deg)" }}>
           I.A.
         </span>
@@ -117,21 +165,41 @@ export function HeroSection() {
 
       <div className="relative z-30 w-full px-4 sm:px-6 lg:px-8 py-10 flex flex-col items-center text-center -mt-4 lg:-mt-16">
         <div className="w-full flex flex-col items-center">
-          <p className="text-primary font-medium tracking-widest uppercase text-[14px] mb-2">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-primary font-medium tracking-widest uppercase text-[14px] mb-2"
+          >
             Criatividade + Estratégia
-          </p>
+          </motion.p>
 
-          <h1 className="text-[clamp(16px,10vw,40px)] sm:text-5xl lg:text-7xl text-foreground leading-tight lg:leading-[68px] text-balance mb-4 max-w-[90%] lg:max-w-[70%]">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[clamp(16px,10vw,40px)] sm:text-5xl lg:text-7xl text-foreground leading-tight lg:leading-[68px] text-balance mb-4 max-w-[90%] lg:max-w-[70%]"
+          >
             Transformamos ideias em{" "}
             <span className="text-primary italic">resultados</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-[16px] text-muted-foreground leading-relaxed mb-8 max-w-[90%] lg:max-w-[60%]">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[16px] text-muted-foreground leading-relaxed mb-8 max-w-[90%] lg:max-w-[60%]"
+          >
             Unimos a força do design criativo com estratégias inteligentes
             para impulsionar a sua empresa.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center lg:cursor-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center lg:cursor-auto"
+          >
             <ScrambleButton
               label="Nossos Serviços"
               href="#servicos"
@@ -146,7 +214,7 @@ export function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 

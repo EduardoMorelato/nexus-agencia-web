@@ -4,9 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import { 
   Globe, 
-  Palette, 
-  Share2, 
-  Video, 
   Target, 
   TrendingUp, 
   Sparkles,
@@ -24,30 +21,6 @@ const services = [
     description: "Desenvolvimento de sites profissionais e landing pages de alta conversão, com design moderno e otimizado para resultados.",
     image: "/images/service-design.jpg",
     features: ["Design Responsivo", "SEO Otimizado", "Alta Performance", "Foco em Conversão"]
-  },
-  {
-    id: "design",
-    icon: Palette,
-    title: "Design Gráfico & Identidade Visual",
-    description: "Criação de logos, banners, materiais gráficos e identidade visual completa que comunica a essência da sua marca.",
-    image: "/images/service-design.jpg",
-    features: ["Logos & Marcas", "Banners & Criativos", "Material Impresso", "Identidade Visual"]
-  },
-  {
-    id: "social",
-    icon: Share2,
-    title: "Social Media & Gestão de Redes",
-    description: "Gestão completa das suas redes sociais com criação de conteúdo estratégico e engajamento contínuo com sua audiência.",
-    image: "/images/service-social.jpg",
-    features: ["Gestão de Perfis", "Criação de Posts", "Calendário Editorial", "Engajamento"]
-  },
-  {
-    id: "video",
-    icon: Video,
-    title: "Produção & Edição de Vídeo",
-    description: "Produção audiovisual profissional, desde filmagem até edição final, para vídeos institucionais, comerciais e redes sociais.",
-    image: "/images/service-video.jpg",
-    features: ["Filmagem Profissional", "Edição de Vídeo", "Motion Graphics", "Vídeos para Redes"]
   },
   {
     id: "trafego",
@@ -100,13 +73,12 @@ export function ServicesSection() {
               <ScrollReveal key={service.id} delay={0.1 * index}>
                 <div
                   className={cn(
-                    "border border-border rounded-lg overflow-hidden transition-all",
-                    openService === service.id ? "bg-background" : "bg-transparent"
+                    "border border-border rounded-lg overflow-hidden transition-all bg-muted/50"
                   )}
                 >
                   <button
                     onClick={() => setOpenService(openService === service.id ? null : service.id)}
-                    className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors"
+                    className="w-full flex items-center justify-between p-4 text-left cursor-pointer transition-colors"
                   >
                     <div className="flex items-center gap-4">
                       <div className={cn(
