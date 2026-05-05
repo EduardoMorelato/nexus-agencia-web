@@ -57,7 +57,7 @@ export function ScrambleButton({
       }
       
       iteration += 1
-    }, 30)
+    }, 20)
   }, [label])
 
   useEffect(() => {
@@ -74,7 +74,7 @@ export function ScrambleButton({
 
   const content = (
     <div className={cn(
-      "relative px-8 sm:px-10 py-3.5 flex items-center justify-center min-w-[160px] sm:min-w-[200px] group cursor-pointer transition-all duration-500 rounded-full overflow-hidden border border-primary/20",
+      "relative px-4 sm:px-10 py-3 flex items-center justify-center min-w-[160px] sm:min-w-[200px] group cursor-pointer transition-all duration-500 rounded-full overflow-hidden border border-primary/20",
       variant === "primary" ? "bg-primary text-primary-foreground" : "bg-background/60 backdrop-blur-md text-foreground hover:text-primary-foreground"
     )}>
       {/* Background Fill Effect */}
@@ -96,7 +96,7 @@ export function ScrambleButton({
           "flex items-center transition-transform duration-300",
           isHovered ? "translate-x-3" : "translate-x-0"
         )}>
-          <span className="font-sans font-medium tracking-[1.5px] uppercase text-xs select-none whitespace-nowrap">
+          <span className="font-sans font-medium tracking-[1.5px] uppercase text-xs select-none whitespace-nowrap translate-y-[0.5px]">
             {displayText}
           </span>
           

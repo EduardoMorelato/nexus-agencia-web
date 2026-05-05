@@ -250,9 +250,6 @@ export function ContactSection() {
                       </SelectTrigger>
                       <SelectContent className="bg-background border-border rounded-xl">
                         <SelectItem value="sites">Sites & Landing Pages</SelectItem>
-                        <SelectItem value="design">Design Gráfico</SelectItem>
-                        <SelectItem value="social">Social Media</SelectItem>
-                        <SelectItem value="video">Produção de Vídeo</SelectItem>
                         <SelectItem value="trafego">Tráfego Pago</SelectItem>
                         <SelectItem value="estrategia">Estratégia Comercial</SelectItem>
                         <SelectItem value="ia">Soluções com IA</SelectItem>

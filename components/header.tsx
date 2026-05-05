@@ -60,7 +60,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="scale-[0.85] sm:scale-90 origin-right"
             >
-              <WhatsappIcon className="ml-2" size={18} />
+              <WhatsappIcon className="ml-2" size={22} />
             </ScrambleButton>
           </div>
         </div>

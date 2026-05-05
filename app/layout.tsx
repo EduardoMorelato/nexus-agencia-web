@@ -71,8 +71,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${poppins.variable} ${dmSerif.variable} bg-background`}>
-      <body className="font-sans antialiased text-base leading-snug">
+    <html lang="pt-BR" className={`${poppins.variable} ${dmSerif.variable} bg-background overflow-x-hidden`}>
+      <body className="font-sans antialiased text-base leading-snug overflow-x-hidden">
         <SmoothScroll>
           {children}
         </SmoothScroll>
