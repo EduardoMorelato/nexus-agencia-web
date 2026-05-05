@@ -12,7 +12,6 @@ interface ScrambleButtonProps {
   className?: string
   variant?: "primary" | "outline"
   type?: "button" | "submit" | "reset"
-  asChild?: boolean
   children?: React.ReactNode
 }
 

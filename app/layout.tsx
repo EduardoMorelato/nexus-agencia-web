@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins, DM_Serif_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SmoothScroll } from '@/components/smooth-scroll'
 import './globals.css'
 
 const poppins = Poppins({ 
@@ -70,9 +71,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${poppins.variable} ${dmSerif.variable} bg-background scroll-smooth`}>
+    <html lang="pt-BR" className={`${poppins.variable} ${dmSerif.variable} bg-background`}>
       <body className="font-sans antialiased text-base leading-snug">
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { ScrollReveal } from "./scroll-reveal"
+import { ScrambleButton } from "./scramble-button"
+import { WhatsappIcon } from "./whatsapp-icon"
 
 export function Footer() {
   return (
@@ -10,10 +12,20 @@ export function Footer() {
             <Link href="/" className="font-semibold text-2xl tracking-tight">
               NEXUS<span className="text-primary">.</span>
             </Link>
-            <p className="mt-4 text-background/70 max-w-md text-[16px]">
+            <p className="mt-4 text-background/70 max-w-md text-[16px] mb-8">
               Transformamos ideias em resultados através do marketing digital 
               e estratégia comercial inteligente.
             </p>
+            <ScrambleButton 
+              label="Agendar Reunião" 
+              href="https://wa.me/5515991116883?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20agendar%20uma%20reunião."
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+              className="mt-6"
+            >
+              <WhatsappIcon className="ml-1" />
+            </ScrambleButton>
           </div>
 
           <div>

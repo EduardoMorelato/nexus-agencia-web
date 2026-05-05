@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ScrambleButton } from "./scramble-button"
+import { WhatsappIcon } from "./whatsapp-icon"
 import { cn } from "@/lib/utils"
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -55,12 +54,14 @@ export function Header() {
 
           <div className="flex-1 flex justify-end">
             <ScrambleButton 
-              label="Fale Conosco" 
-              href="https://wa.me/5515991116883?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Nexus."
+              label="Agendar Reunião" 
+              href="https://wa.me/5515991116883?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20agendar%20uma%20reunião."
               target="_blank"
               rel="noopener noreferrer"
               className="scale-[0.8] sm:scale-90 origin-right"
-            />
+            >
+              <WhatsappIcon className="ml-1" />
+            </ScrambleButton>
           </div>
         </div>
       </div>

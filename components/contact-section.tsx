@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Loader2 } from "lucide-react"
+import { Phone, MapPin, Send, Instagram, Linkedin, Loader2 } from "lucide-react"
 import { ScrambleButton } from "./scramble-button"
 import { ScrollReveal } from "./scroll-reveal"
 import { motion, AnimatePresence } from "framer-motion"
@@ -128,14 +128,14 @@ export function ContactSection() {
               <div className="flex gap-4">
                 <a 
                   href="#" 
-                  className="p-3 bg-background border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                  className="p-3 bg-background border border-border rounded-lg hover:border-primary hover:text-primary transition-colors cursor-pointer"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a 
                   href="#" 
-                  className="p-3 bg-background border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                  className="p-3 bg-background border border-border rounded-lg hover:border-primary hover:text-primary transition-colors cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />

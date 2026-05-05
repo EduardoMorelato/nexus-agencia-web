@@ -1,8 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
 import { ScrambleButton } from "./scramble-button"
 import { ParticleTunnel } from "./particle-tunnel"
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion"

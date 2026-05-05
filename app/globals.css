@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import 'lenis/dist/lenis.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -115,6 +116,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
+
+/* Removido scroll-behavior nativo para não conflitar com Lenis */
 
 @layer base {
   * {
