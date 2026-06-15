@@ -33,3 +33,5 @@ Projeto Next.js 16 para o site premium da agência Moragon (Marketing Digital & 
   - Estruturado o guia `identidade/design-guide.md` com a paleta restrita de 4 cores (Azul Oficial, Azul Escuro, Off-White e Ciano) e referências de logos SVGs da agência.
   - Criadas as pastas operacionais (`clientes/`, `briefings/`, `propostas/`, `marketing/`, `saidas/`, `dados/`, `scripts/` e `templates/`) e o arquivo de pipeline `tarefas.md`.
 
+
+
