@@ -71,7 +71,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contato" className="py-20 bg-background">
+    <section id="contato" className="py-20 bg-muted/20 border-t border-border/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center mb-10">
           <div className="flex justify-center mb-2 mt-10">
@@ -99,7 +99,7 @@ export function ContactSection() {
               <div className="space-y-4">
 
                 <a 
-                  href="https://wa.me/5515991116883?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Nexus."
+                  href="https://wa.me/5515991116883?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Moragon."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-background rounded-lg border border-border hover:border-primary transition-colors group"
@@ -149,7 +149,7 @@ export function ContactSection() {
           </ScrollReveal>
 
           {/* Contact Form */}
-          <ScrollReveal delay={0.4} className="bg-background border border-border rounded-2xl p-4 sm:p-8 relative overflow-hidden min-h-[580px] lg:min-h-[620px]">
+          <ScrollReveal delay={0.4} className="bg-card border border-border/80 shadow-md rounded-2xl p-4 sm:p-8 relative overflow-hidden min-h-[580px] lg:min-h-[620px]">
             <AnimatePresence mode="wait">
               {isSubmitted ? (
                 <motion.div 
@@ -190,13 +190,13 @@ export function ContactSection() {
                         name="name"
                         placeholder=" "
                         required
-                        className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                        className="peer h-14 border-foreground/35 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-white dark:bg-white/5 shadow-xs text-foreground"
                       />
                       <label 
                         htmlFor="name" 
                         className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-card peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-card peer-[:not(:placeholder-shown)]:px-2"
                       >
                         Nome Completo <span className="text-red-500">*</span>
                       </label>
@@ -208,13 +208,13 @@ export function ContactSection() {
                         type="email"
                         placeholder=" "
                         required
-                        className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                        className="peer h-14 border-foreground/35 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-white dark:bg-white/5 shadow-xs text-foreground"
                       />
                       <label 
                         htmlFor="email" 
                         className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-card peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-card peer-[:not(:placeholder-shown)]:px-2"
                       >
                         E-mail Profissional <span className="text-red-500">*</span>
                       </label>
@@ -231,13 +231,13 @@ export function ContactSection() {
                         value={phone}
                         onChange={(e) => setPhone(formatPhone(e.target.value))}
                         maxLength={15}
-                        className="peer h-14 border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-transparent"
+                        className="peer h-14 border-foreground/35 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[20px] px-6 bg-white dark:bg-white/5 shadow-xs text-foreground"
                       />
                       <label 
                         htmlFor="phone" 
                         className="absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                        peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-card peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-card peer-[:not(:placeholder-shown)]:px-2"
                       >
                         Telefone / WhatsApp
                       </label>
@@ -252,7 +252,7 @@ export function ContactSection() {
                       <Select onValueChange={setService} required>
                         <SelectTrigger 
                           className={cn(
-                            "!h-14 w-full rounded-[20px] border border-foreground/20 bg-transparent px-6 text-sm transition-all duration-300 outline-none focus:border-primary focus:ring-0 focus-visible:ring-0 ring-0",
+                            "!h-14 w-full rounded-[20px] border border-foreground/35 bg-white dark:bg-white/5 px-6 text-sm transition-all duration-300 outline-none focus:border-primary focus:ring-0 focus-visible:ring-0 ring-0 shadow-xs text-foreground",
                             service && "border-primary"
                           )}
                         >
@@ -269,7 +269,7 @@ export function ContactSection() {
                       <label 
                         className={cn(
                           "absolute left-5 top-[17px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none px-2",
-                          service ? "-translate-y-7 text-xs text-primary bg-background" : "group-focus-within:-translate-y-7 group-focus-within:text-xs group-focus-within:text-primary group-focus-within:bg-background"
+                          service ? "-translate-y-7 text-xs text-primary bg-card" : "group-focus-within:-translate-y-7 group-focus-within:text-xs group-focus-within:text-primary group-focus-within:bg-card"
                         )}
                       >
                         Serviço de Interesse <span className="text-red-500">*</span>
@@ -285,13 +285,13 @@ export function ContactSection() {
                         placeholder=" "
                         rows={4}
                         required
-                        className="peer resize-none border-foreground/20 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-transparent min-h-[112px] [field-sizing:unset]"
+                        className="peer resize-none border-foreground/35 focus:border-primary focus:ring-0 focus-visible:ring-0 outline-none transition-all duration-300 rounded-[28px] px-6 py-4 pt-6 bg-white dark:bg-white/5 min-h-[112px] [field-sizing:unset] shadow-xs text-foreground"
                       />
                       <label 
                         htmlFor="message" 
                         className="absolute left-5 top-[21px] text-muted-foreground text-sm transition-all duration-300 pointer-events-none 
-                        peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2
-                        peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-background peer-[:not(:placeholder-shown)]:px-2"
+                        peer-focus:-translate-y-8 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-card peer-focus:px-2
+                        peer-[:not(:placeholder-shown)]:-translate-y-8 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-card peer-[:not(:placeholder-shown)]:px-2"
                       >
                         Conte-nos sobre o seu projeto... <span className="text-red-500">*</span>
                       </label>

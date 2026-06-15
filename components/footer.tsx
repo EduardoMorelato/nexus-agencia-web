@@ -69,7 +69,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-background/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[16px] text-background/70">
-            © {new Date().getFullYear()} Nexus. Todos os direitos reservados.
+            © {new Date().getFullYear()} Moragon. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-background/70 hover:text-background transition-colors">

@@ -1,7 +1,7 @@
-# Nexus - Agency Web
+# Moragon - Agency Web
 
 ## Visão Geral
-Projeto Next.js 16 para o site premium da agência Nexus (Marketing Digital & Estratégia Comercial).
+Projeto Next.js 16 para o site premium da agência Moragon (Marketing Digital & Estratégia Comercial).
 
 ## Estrutura do Projeto
 - `app/`: Layout global, configurações de fontes (Poppins, DM Serif Display) e página inicial.
@@ -10,6 +10,12 @@ Projeto Next.js 16 para o site premium da agência Nexus (Marketing Digital & Es
 - `package.json`: Configurado com React 19, Next.js 16, Tailwind CSS 4 e Framer Motion.
 
 ## Últimas Alterações Registradas
+- **[15/06/2026]** Renomeação de Marca, Correção de Contraste e Inputs
+  - Alteradas todas as referências de "Nexus" para a nova marca oficial "Moragon" em metadados, títulos, seções e links do site.
+  - Corrigido o design das caixas de inserir texto no formulário de contato, aplicando fundo branco sólido (`bg-white`) e borda nítida com excelente contraste (`border-foreground/35`), tornando os campos perfeitamente visíveis.
+  - Implementado o novo sistema restrito de 4 cores da marca (Azul Oficial `#1022AD`, Azul Escuro Profundo, Branco Não Puro/Off-White e Ciano Elétrico) em todas as seções e variáveis CSS globais.
+  - Transformada a seção de Serviços para fundo escuro com suporte a vídeo de background leve e transição de gradiente suave a partir da Hero.
+  - Otimizados os cards e as tags de especialidades da equipe para eliminar poluição visual de cinzas.
 - **[15/06/2026]** Integração da nova identidade visual (Logos e Favicon)
   - Modificada a cor do arquivo `logo.svg` físico de laranja (`#CC5F06`) para o azul oficial do site (`#1022AD`).
   - Copiada a logo compacta para `public/icon.svg` e `app/icon.svg` para servir de favicon do site de forma nativa.
