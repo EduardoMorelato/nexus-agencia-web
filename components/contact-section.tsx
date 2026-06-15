@@ -9,6 +9,7 @@ import { ScrambleButton } from "./scramble-button"
 import { ScrollReveal } from "./scroll-reveal"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { LogoIcon } from "@/components/logos"
 import {
   Select,
   SelectContent,
@@ -73,7 +74,10 @@ export function ContactSection() {
     <section id="contato" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center mb-10">
-          <p className="mt-10 text-primary font-medium tracking-widest uppercase text-[14px] mb-2">
+          <div className="flex justify-center mb-2 mt-10">
+            <LogoIcon className="h-6 w-auto text-primary" />
+          </div>
+          <p className="text-primary font-medium tracking-widest uppercase text-[14px] mb-2">
             Contato
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-[2px] text-balance">

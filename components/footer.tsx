@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ScrollReveal } from "./scroll-reveal"
 import { ScrambleButton } from "./scramble-button"
 import { WhatsappIcon } from "./whatsapp-icon"
+import { LogoExtensiva } from "@/components/logos"
 
 export function Footer() {
   return (
@@ -9,8 +10,8 @@ export function Footer() {
       <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <Link href="/" className="font-semibold text-2xl tracking-tight">
-              NEXUS<span className="text-primary">.</span>
+            <Link href="/" className="flex items-center">
+              <LogoExtensiva className="h-8 w-auto text-background" />
             </Link>
             <p className="mt-4 text-background/70 max-w-md text-[16px] mb-8">
               Transformamos ideias em resultados através do marketing digital 

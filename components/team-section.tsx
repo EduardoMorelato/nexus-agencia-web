@@ -1,5 +1,6 @@
 import { Palette, TrendingUp, Sparkles, MessageSquare } from "lucide-react"
 import { ScrollReveal } from "./scroll-reveal"
+import { LogoIcon } from "@/components/logos"
 
 const team = [
   {
@@ -33,7 +34,10 @@ export function TeamSection() {
     <section id="equipe" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <ScrollReveal className="text-center mb-16">
-          <p className="mt-10 text-primary font-medium tracking-widest uppercase text-[16px] mb-2">
+          <div className="flex justify-center mb-2 mt-10">
+            <LogoIcon className="h-6 w-auto text-primary" />
+          </div>
+          <p className="text-primary font-medium tracking-widest uppercase text-[16px] mb-2">
             Quem Somos
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-[2px] text-balance">

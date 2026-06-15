@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ScrambleButton } from "./scramble-button"
 import { WhatsappIcon } from "./whatsapp-icon"
 import { cn } from "@/lib/utils"
+import { LogoExtensiva } from "@/components/logos"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -31,8 +32,8 @@ export function Header() {
       <div className="w-full px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           <div className="flex-1 flex justify-start">
-            <Link href="/" className="font-semibold text-xl tracking-tight text-foreground">
-              NEXUS<span className="text-primary">.</span>
+            <Link href="/" className="flex items-center">
+              <LogoExtensiva className="h-6 sm:h-7 w-auto text-primary" />
             </Link>
           </div>
 
