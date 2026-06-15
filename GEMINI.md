@@ -26,3 +26,10 @@ Projeto Next.js 16 para o site premium da agência Moragon (Marketing Digital & 
   - Escaneamento completo do projeto Next.js realizado com sucesso.
   - Identificados componentes principais da interface e animações interativas.
   - Criado o arquivo `GEMINI.md` para monitoramento contínuo das atividades de desenvolvimento.
+- **[15/06/2026]** Instalação e Adaptação do MazyOS para Antigravity
+  - Clonado e instalado o sistema operacional de negócios MazyOS no workspace da agência Moragon.
+  - Adaptada toda a arquitetura de comandos e regras originais de "Claude" para a plataforma "Antigravity", criando o arquivo `ANTIGRAVITY.md` e a pasta `.antigravity/skills/`.
+  - Configurados os arquivos de contexto `empresa.md`, `preferencias.md` e `estrategia.md` dentro de `_memoria/` com dados reais dos sócios Eduardo Morelato e Rodrigo Gonzales.
+  - Estruturado o guia `identidade/design-guide.md` com a paleta restrita de 4 cores (Azul Oficial, Azul Escuro, Off-White e Ciano) e referências de logos SVGs da agência.
+  - Criadas as pastas operacionais (`clientes/`, `briefings/`, `propostas/`, `marketing/`, `saidas/`, `dados/`, `scripts/` e `templates/`) e o arquivo de pipeline `tarefas.md`.
+
