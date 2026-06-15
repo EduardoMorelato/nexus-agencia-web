@@ -47,8 +47,13 @@ export const metadata: Metadata = {
   },
   generator: 'Next.js',
   icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+    icon: [
+      {
+        url: '/icon.svg?v=2',
+        type: 'image/svg+xml',
+      }
+    ],
+    apple: '/icon.svg?v=2',
   },
 }
 
