@@ -28,6 +28,7 @@ saidas/
 marketing/
 templates/
 scripts/
+identidade/
 
 # Internal documentation and task files
 ANTIGRAVITY.md
